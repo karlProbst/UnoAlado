@@ -24,7 +24,7 @@ func _ready():
 	
 # Caldddddddddddddled every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sun.rotate_x(delta/10)
+	sun.rotate_x(delta/30)
 	
 	if(follow):
 		if(!is_beggining):
