@@ -1,0 +1,17 @@
+res://3dScene.tscn
+res://SkyClouds.gdshader
+res://smoke_new_sprite_frames.tres
+res://3dScene.gdshader
+res://clouds_shader.gdshader
+res://cloud_shader.gdshader
+res://volumetricclouds.gdshader
+res://clouds/clouds.gdshader
+res://FISHEYE.gdshader
+res://tunel2.gdshader
+res://cockpit.gdshader
+res://TUNEL.gdshader
+res://frostyglass.gdshader
+res://stargalacti.gdshader
+res://ball.gdshader
+res://wireframe.gdshader
+res://meatball.gdshader
