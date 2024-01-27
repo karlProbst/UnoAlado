@@ -1,0 +1,31 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dgwki8y1f6sbc"]
+
+[ext_resource type="Texture2D" uid="uid://b1xjiuqx7pmhm" path="res://assets/DALL·E 2024-01-23 10.08.45 - A seamless panoramic view of a sky with clouds, the sun, and Saturn, desi(1).png" id="1_pdmkk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d5tle"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_curve = 0.579562
+sky_cover = ExtResource("1_pdmkk")
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wpj7v"]
+sky_material = SubResource("ProceduralSkyMaterial_d5tle")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_wpj7v")
+ambient_light_source = 2
+ambient_light_color = Color(0.298039, 0.384314, 0.458824, 1)
+tonemap_mode = 3
+tonemap_white = 1.5
+ssr_fade_in = 0.15529
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 6.68
+fog_enabled = true
+fog_density = 0.0
+fog_aerial_perspective = 0.353
+volumetric_fog_density = 0.0585
+adjustment_enabled = true
+adjustment_contrast = 1.1
+adjustment_saturation = 1.7

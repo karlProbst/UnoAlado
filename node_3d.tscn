@@ -1,0 +1,107 @@
+[gd_scene load_steps=23 format=3 uid="uid://bbtys66gevnn6"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_och7o"]
+[ext_resource type="Resource" path="res://TerrainData/data.hterrain" id="2_a1gr3"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_420wi"]
+[ext_resource type="Texture2D" uid="uid://bnojux2bpgi3w" path="res://Textures/Grass003_1K-PNG/Grass003_1K-PNG_Color.png" id="4_00duv"]
+[ext_resource type="Texture2D" uid="uid://pnsdesbb3pfi" path="res://Textures/Rock051_1K-PNG/Rock051_1K-PNG_Color.png" id="5_uoqrl"]
+[ext_resource type="Texture2D" uid="uid://cwmen2yv773et" path="res://Textures/Snow010A_1K-PNG/Snow010A_1K-PNG_Color.png" id="6_u0erp"]
+[ext_resource type="Texture2D" uid="uid://b285j2rrvp7lq" path="res://Textures/Moss002_1K-PNG/Moss002_1K-PNG_Color.png" id="7_8xvg5"]
+[ext_resource type="Texture2D" uid="uid://ce43otuta4ukt" path="res://Textures/Grass003_1K-PNG/Grass003_1K-PNG_NormalDX.png" id="8_khn83"]
+[ext_resource type="Texture2D" uid="uid://bqu4ql4kl4xog" path="res://Textures/Rock051_1K-PNG/Rock051_1K-PNG_NormalDX.png" id="9_noj7v"]
+[ext_resource type="Texture2D" uid="uid://c6gvyt4s23sky" path="res://Textures/Snow010A_1K-PNG/Snow010A_1K-PNG_NormalDX.png" id="10_4nwkg"]
+[ext_resource type="Texture2D" uid="uid://cqmeevydpgyja" path="res://Textures/Moss002_1K-PNG/Moss002_1K-PNG_NormalDX.png" id="11_wxlnf"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="12_grggy"]
+[ext_resource type="Texture2D" uid="uid://crxfgdutqdpov" path="res://matim.png" id="13_dvefl"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="14_qqvuj"]
+[ext_resource type="Texture2D" uid="uid://bekdp0uwpbidl" path="res://OIG.jpg" id="15_4a3et"]
+[ext_resource type="Script" path="res://RigidBody3D.gd" id="16_fy1u6"]
+
+[sub_resource type="Resource" id="Resource_ysh2b"]
+script = ExtResource("3_420wi")
+mode = 0
+textures = [[ExtResource("4_00duv"), ExtResource("5_uoqrl"), ExtResource("6_u0erp"), ExtResource("7_8xvg5")], [ExtResource("8_khn83"), ExtResource("9_noj7v"), ExtResource("10_4nwkg"), ExtResource("11_wxlnf")]]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gkq74"]
+panorama = ExtResource("15_4a3et")
+
+[sub_resource type="Sky" id="Sky_8he12"]
+sky_material = SubResource("PanoramaSkyMaterial_gkq74")
+
+[sub_resource type="Environment" id="Environment_nrvem"]
+background_mode = 2
+sky = SubResource("Sky_8he12")
+ambient_light_source = 3
+ambient_light_color = Color(0.929412, 0.796078, 0.65098, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+adjustment_enabled = true
+adjustment_brightness = 1.17
+adjustment_contrast = 2.0
+adjustment_saturation = 1.93
+
+[sub_resource type="PrismMesh" id="PrismMesh_dxto1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xqla6"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="HTerrain" type="Node3D" parent="SubViewport"]
+script = ExtResource("1_och7o")
+_terrain_data = ExtResource("2_a1gr3")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_ysh2b")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale_per_texture = null
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = null
+shader_params/u_globalmap_blend_start = null
+shader_params/u_globalmap_blend_distance = null
+shader_params/u_colormap_opacity_per_texture = null
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="SubViewport/HTerrain"]
+script = ExtResource("12_grggy")
+texture = ExtResource("13_dvefl")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("14_qqvuj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_nrvem")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+transform = Transform3D(0.789727, 0, -0.613459, 0, 1, 0, 0.613459, 0, 0.789727, 0, 182.894, 534.336)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="SubViewport"]
+transform = Transform3D(0.814318, 0, 0.580419, 0, 1, 0, -0.580419, 0, 0.814318, 18.8676, 15.2038, 9.84261)
+script = ExtResource("16_fy1u6")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/CharacterBody3D"]
+transform = Transform3D(-0.991081, 0, 0.13326, 0.0247305, 0.982629, 0.183926, -0.130945, 0.185581, -0.973865, -0.00287771, 0.74036, -3.28269)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/CharacterBody3D"]
+mesh = SubResource("PrismMesh_dxto1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/CharacterBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xqla6")

@@ -1,0 +1,217 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cm0nqqo8co6rx"]
+
+[ext_resource type="Texture2D" uid="uid://c4a62bg0c11jk" path="res://assets/SmokeTextureSheet.png" id="1_7lm8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snv78"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(0, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq2v7"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(125, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an0g1"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(250, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auja7"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(375, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks58t"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(500, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0gsj"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(625, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhil"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(750, 456, 125, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atslg"]
+atlas = ExtResource("1_7lm8b")
+region = Rect2(875, 456, 125, 114)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snv78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq2v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an0g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auja7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks58t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0gsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlhil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atslg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

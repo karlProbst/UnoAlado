@@ -1,0 +1,11 @@
+Model Information:
+* title:	Race Car GT wing
+* source:	https://sketchfab.com/3d-models/race-car-gt-wing-31cd0a35386c4057a912b54d17ba19a9
+* author:	Uzair Anis (https://sketchfab.com/UzairAnis)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Race Car GT wing" (https://sketchfab.com/3d-models/race-car-gt-wing-31cd0a35386c4057a912b54d17ba19a9) by Uzair Anis (https://sketchfab.com/UzairAnis) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

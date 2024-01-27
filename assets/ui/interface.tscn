@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ql504bi1ee6"]
+
+[ext_resource type="PackedScene" uid="uid://bu2hixfhu8ndm" path="res://assets/ui/UIEnginePower/UIEnginePower.tscn" id="1_nw2yt"]
+[ext_resource type="PackedScene" uid="uid://dsel16gi76dnm" path="res://assets/ui/UIEnergyContainer/UIFuelLevel.tscn" id="2_fwm0u"]
+[ext_resource type="PackedScene" uid="uid://b8s77ar81hq22" path="res://assets/ui/UILandingGear/UILandingGear.tscn" id="3_d288s"]
+[ext_resource type="PackedScene" uid="uid://c4dncgm8qjt7u" path="res://assets/ui/UIFlaps/UIFlaps.tscn" id="4_nqonu"]
+[ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://assets/ui/UIAttitude/UIAttitude.tscn" id="5_3lypi"]
+[ext_resource type="Script" path="res://assets/ui/UIFlaps/UIFlaps.gd" id="5_06eoh"]
+[ext_resource type="PackedScene" uid="uid://bmut2y2xaqj6x" path="res://assets/ui/UIAltSpeed/UIAltSpeed.tscn" id="6_d624o"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UIEnginePower" parent="." instance=ExtResource("1_nw2yt")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -138.0
+offset_right = 74.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="UIFuelLevel" parent="." instance=ExtResource("2_fwm0u")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = -139.0
+offset_right = 145.0
+offset_bottom = -11.0
+grow_vertical = 0
+
+[node name="UILandingGear" parent="." instance=ExtResource("3_d288s")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 153.0
+offset_top = -139.0
+offset_right = 263.0
+offset_bottom = -11.0
+grow_vertical = 0
+
+[node name="UIFlaps" parent="." instance=ExtResource("4_nqonu")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_top = -139.0
+offset_right = 382.0
+offset_bottom = -11.0
+grow_vertical = 0
+script = ExtResource("5_06eoh")
+
+[node name="UIAttitude" parent="." instance=ExtResource("5_3lypi")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 395.0
+offset_top = -139.0
+offset_right = 611.0
+offset_bottom = -11.0
+grow_vertical = 0
+
+[node name="UIAltSpeed" parent="." instance=ExtResource("6_d624o")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 674.0
+offset_top = -139.0
+offset_right = 785.0
+offset_bottom = -11.0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -177.0
+offset_top = 26.0
+offset_bottom = 279.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -174.0
+offset_right = 217.0
+offset_bottom = -160.0
+text = "Park on runway to refuel tank"
+
+[node name="BtnBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 163.0
+offset_bottom = 24.0
+focus_mode = 0
+text = "<- Back to example list"

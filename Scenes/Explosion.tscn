@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://n57f8w60qt7p"]
+
+[sub_resource type="GDScript" id="3"]
+resource_name = "Explosion"
+script/source = "extends Node3D
+
+func explode():
+	$CPUParticles3D.emitting = true
+	$SFX.play()
+	await get_tree().create_timer(1.5).timeout
+	queue_free()
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dt44"]
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(0.933333, 0.67451, 0.309804, 0.67451)
+
+[sub_resource type="SphereMesh" id="2"]
+material = SubResource("StandardMaterial3D_5dt44")
+radius = 2.0
+height = 4.0
+radial_segments = 12
+rings = 6
+
+[sub_resource type="Curve" id="Curve_ka48q"]
+_data = [Vector2(0.346667, 0.714286), 0.0, 0.0, 0, 0, Vector2(0.537778, 1), 0.0, 0.0, 0, 0, Vector2(0.733333, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_5xto1"]
+
+[node name="Explosion" type="Node3D"]
+script = SubResource("3")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 60
+lifetime = 1.88
+one_shot = true
+preprocess = 0.4
+speed_scale = 1.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.64
+draw_order = 1
+mesh = SubResource("2")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 75.25
+gravity = Vector3(0, 9.545, 0)
+initial_velocity_max = 20.0
+tangential_accel_min = 1.65
+tangential_accel_max = 13.11
+damping_min = 4.098
+damping_max = 9.016
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_ka48q")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMP3_5xto1")

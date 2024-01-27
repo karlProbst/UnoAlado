@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1b413wxm6vti"]
+
+[ext_resource type="Shader" path="res://frostyglass.gdshader" id="1_rdnhq"]
+[ext_resource type="PackedScene" uid="uid://cdiyn4gojj0u0" path="res://3dScene.tscn" id="1_vyddf"]
+[ext_resource type="Script" path="res://tunel.gd" id="3_hsaa5"]
+[ext_resource type="Shader" path="res://TUNEL.gdshader" id="3_qmy3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwt5j"]
+render_priority = 0
+shader = ExtResource("1_rdnhq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dyfs"]
+shader = ExtResource("3_qmy3m")
+shader_parameter/is_card = true
+shader_parameter/iTime = null
+shader_parameter/iChannelResolution1 = null
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pvlrh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_jwt5j")
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 1279.0
+offset_bottom = 724.0
+scale = Vector2(1.04361, 1.04361)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_vyddf")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8dyfs")
+position = Vector2(580, 333)
+scale = Vector2(17.9375, 10.1992)
+texture = SubResource("GradientTexture2D_pvlrh")
+script = ExtResource("3_hsaa5")

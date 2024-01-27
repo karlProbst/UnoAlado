@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://s15a6b1nidkx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igcpr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ty6o"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_igcpr")
+radial_segments = 15
+rings = 7
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_1ty6o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.55666)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.48432)

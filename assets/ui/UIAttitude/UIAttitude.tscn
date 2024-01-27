@@ -1,0 +1,353 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhg4sb4ifrvh8"]
+
+[ext_resource type="Script" path="res://assets/ui/UIAttitude/UIAttitude.gd" id="1_4xfrl"]
+[ext_resource type="Texture2D" uid="uid://btekexp2jh7kq" path="res://assets/ui/panel_bg9.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ba1q1fbp0drn8" path="res://assets/ui/back_bg9.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://drit0el54v3vg" path="res://assets/ui/UIAttitude/scale.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b4gpa0au4g0nx" path="res://assets/ui/UIAttitude/compass2.png" id="5"]
+[ext_resource type="Script" path="res://assets/ui/UIGForce/UIGForce.gd" id="6_mtfr3"]
+[ext_resource type="Texture2D" uid="uid://drtlaesfdwfor" path="res://assets/ui/back_fg9.png" id="7_lenah"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([null])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="UIAttitude" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 216.0
+offset_bottom = 128.0
+script = ExtResource("1_4xfrl")
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+texture = ExtResource("2")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 10
+text = "Attitude"
+horizontal_alignment = 1
+
+[node name="Horizon" type="NinePatchRect" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 21.0
+offset_right = 103.0
+offset_bottom = 117.0
+texture = ExtResource("3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Panel/Horizon"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Panel/Horizon/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.360784, 0.54902, 0.764706, 1)
+
+[node name="CenterRef" type="Control" parent="Panel/Horizon/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Ground" type="ColorRect" parent="Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_right = 72.0
+offset_bottom = 144.0
+color = Color(0.501961, 0.34902, 0.0901961, 1)
+
+[node name="Scale" type="TextureRect" parent="Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = -72.0
+offset_right = -20.0
+offset_bottom = 72.0
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="Scale2" type="TextureRect" parent="Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 44.0
+offset_bottom = 216.0
+rotation = 3.14159
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="PlaneHorizon" type="ColorRect" parent="Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 1.0
+
+[node name="Compass" type="NinePatchRect" parent="Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 21.0
+offset_right = 207.0
+offset_bottom = 117.0
+texture = ExtResource("3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Panel/Compass"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="CenterRef" type="Control" parent="Panel/Compass/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Compass/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 30.0
+offset_right = 2.0
+offset_bottom = 46.0
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.501961)
+
+[node name="UIGForce" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 216.0
+offset_right = 264.0
+offset_bottom = 128.0
+script = ExtResource("6_mtfr3")
+
+[node name="Panel" type="NinePatchRect" parent="UIGForce"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 43.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 10
+text = "g"
+horizontal_alignment = 1
+
+[node name="Bar" type="TextureProgressBar" parent="UIGForce/Panel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -39.0
+offset_right = -3.0
+offset_bottom = 54.0
+min_value = -1.0
+max_value = 4.0
+step = 0.01
+value = 3.0
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("3")
+texture_progress = ExtResource("7_lenah")
+tint_progress = Color(0.407843, 0.592157, 0.6, 1)
+
+[node name="Markm1g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 116.0
+offset_right = 30.0
+offset_bottom = 118.0
+color = Color(1, 0.580392, 0.466667, 1)
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Markm1g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "-1"
+
+[node name="Mark0g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 98.0
+offset_right = 30.0
+offset_bottom = 100.0
+color = Color(1, 0.929412, 0.466667, 1)
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Mark0g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "0"
+
+[node name="Mark1g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 80.0
+offset_right = 30.0
+offset_bottom = 82.0
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Mark1g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "1"
+
+[node name="Mark2g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 61.0
+offset_right = 30.0
+offset_bottom = 63.0
+color = Color(1, 0.929412, 0.466667, 1)
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Mark2g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "2"
+
+[node name="Mark3g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 42.0
+offset_right = 30.0
+offset_bottom = 44.0
+color = Color(1, 0.580392, 0.466667, 1)
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Mark3g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "3"
+
+[node name="Mark4g" type="ColorRect" parent="UIGForce/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 30.0
+offset_bottom = 26.0
+color = Color(1, 0.211765, 0.211765, 1)
+
+[node name="Label" type="Label" parent="UIGForce/Panel/Mark4g"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.501961, 0.501961, 0.623529, 1)
+theme_override_fonts/font = SubResource("1")
+text = "4"
