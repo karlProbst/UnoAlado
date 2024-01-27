@@ -60,8 +60,10 @@ func receive_input(event):
 			match event.keycode:
 				
 				KeyStart:
+					engineParticles.emitting=true
 					send_to_engines("engine_start")
 				KeyStop:
+					engineParticles.emitting=false
 					send_to_engines("engine_stop")
 			
 
